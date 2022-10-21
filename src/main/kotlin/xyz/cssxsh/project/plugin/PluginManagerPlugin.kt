@@ -29,9 +29,9 @@ public object PluginManagerPlugin : KotlinPlugin(
             launch {
                 for (id in PluginManagerData.plugins) {
                     val target = manager.plugins.find { it.id == id || it.name == id } ?: continue
-                    manager.disablePlugin(plugin = target)
                     try {
-                        (target as CoroutineScope).cancel("cancel by command")
+                        manager.disablePlugin(plugin = target)
+                        (target as CoroutineScope).cancel("cancel by plugin-manager")
                     } catch (cause: Exception) {
                         logger.warning("${target.id} 终止异常", cause)
                     }

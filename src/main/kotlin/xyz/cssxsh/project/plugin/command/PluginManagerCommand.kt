@@ -22,13 +22,13 @@ public object PluginManagerCommand : CompositeCommand(
             sendMessage("未找到目标插件")
             return
         }
-        manager.disablePlugin(plugin = target)
+        PluginManagerData.plugins.add(target.id)
         try {
-            (target as CoroutineScope).cancel("cancel by command")
+            manager.disablePlugin(plugin = target)
+            (target as CoroutineScope).cancel("cancel by plugin-manager")
         } catch (cause: Exception) {
             PluginManagerPlugin.logger.warning("${target.id} 终止异常", cause)
         }
-        PluginManagerData.plugins.add(target.id)
         sendMessage("目标插件 ${target.id} 关闭完毕")
     }
 
@@ -39,7 +39,12 @@ public object PluginManagerCommand : CompositeCommand(
             sendMessage("未找到目标插件")
             return
         }
-        manager.enablePlugin(plugin = target)
+        PluginManagerData.plugins.remove(target.id)
+        try {
+            manager.enablePlugin(plugin = target)
+        } catch (cause: Exception) {
+            PluginManagerPlugin.logger.warning("${target.id} 启动异常", cause)
+        }
 
         sendMessage("目标插件 ${target.id} 开启完毕")
     }
