@@ -5,7 +5,7 @@ plugins {
     id("net.mamoe.mirai-console") version "2.13.0-RC2"
 }
 
-group = "xyz.cssxsh.project"
+group = "xyz.cssxsh.product"
 version = "1.0.0"
 
 repositories {
