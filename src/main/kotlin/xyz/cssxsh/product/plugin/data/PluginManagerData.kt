@@ -1,4 +1,4 @@
-package xyz.cssxsh.project.plugin.data
+package xyz.cssxsh.product.plugin.data
 
 import net.mamoe.mirai.console.data.*
 

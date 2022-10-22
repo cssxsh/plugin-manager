@@ -1,4 +1,4 @@
-package xyz.cssxsh.project.plugin
+package xyz.cssxsh.product.plugin
 
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.cancel
@@ -9,14 +9,14 @@ import net.mamoe.mirai.console.command.CommandManager.INSTANCE.unregister
 import net.mamoe.mirai.console.extension.*
 import net.mamoe.mirai.console.plugin.*
 import net.mamoe.mirai.console.plugin.jvm.*
-import xyz.cssxsh.project.plugin.command.*
-import xyz.cssxsh.project.plugin.data.*
+import xyz.cssxsh.product.plugin.command.*
+import xyz.cssxsh.product.plugin.data.*
 
 public object PluginManagerPlugin : KotlinPlugin(
     JvmPluginDescription(
         id = "xyz.cssxsh.project.plugin-manager",
         name = "plugin-manager",
-        version = "0.1.0",
+        version = "1.0.0",
     ) {
         author("cssxsh")
     }

@@ -1,11 +1,11 @@
-package xyz.cssxsh.project.plugin.command
+package xyz.cssxsh.product.plugin.command
 
 import kotlinx.coroutines.*
 import net.mamoe.mirai.console.*
 import net.mamoe.mirai.console.command.*
 import net.mamoe.mirai.console.plugin.*
-import xyz.cssxsh.project.plugin.*
-import xyz.cssxsh.project.plugin.data.*
+import xyz.cssxsh.product.plugin.*
+import xyz.cssxsh.product.plugin.data.*
 
 public object PluginManagerCommand : CompositeCommand(
     owner = PluginManagerPlugin,
